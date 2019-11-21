@@ -4,7 +4,7 @@ RaspberryPiにVSCodeをインストールする
 インストール用スクリプトを作ったのでそれを使う
 
 ```bash
-$ curl https://github.com/Kuro4/RaspiMemo/blob/master/VSCode/installvscode.sh | sudo bash
+$ curl https://raw.githubusercontent.com/Kuro4/RaspiMemo/master/VSCode/installvscode.sh | sudo bash
 ```
 
 以降はスクリプトを使わずにインストールする方法
