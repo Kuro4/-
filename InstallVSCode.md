@@ -1,65 +1,67 @@
-RaspberryPi��VSCode���C���X�g�[������
+RaspberryPiにVSCodeをインストールする
 
-# 0.�C���X�g�[���X�N���v�g���g��
-�C���X�g�[���p�X�N���v�g��������̂ł�����g��
+# 0.インストールスクリプトを使う
+インストール用スクリプトを作ったのでそれを使う
 
 ```bash
-$ curl
+$ curl https://github.com/Kuro4/RaspiMemo/blob/master/installvscode.sh | sudo bash
 ```
 
-# 1.GPG Key�̃C���X�g�[��
+以降はスクリプトを使わずにインストールする方法
 
-�܂���GPG Key���擾����
+# 1.GPG Keyのインストール
+
+まずはGPG Keyを取得する
 
 ```bash
 $ wget https://packagecloud.io/headmelted/codebuilds/gpgkey
 ```
 
-�܂���[����](https://code.headmelted.com/)����_�E�����[�h
+または[ここ](https://code.headmelted.com/)からダウンロード
 
-���ɃC���X�g�[��
+次にインストール
 
 ```bash
 $ sudo apt-key add gpg
 ```
 
-gpg�̕����ɂ͎擾����GPG Key�̃p�X������
+gpgの部分には取得したGPG Keyのパスを入れる
 
-# 2.VSCode�̃C���X�g�[��
+# 2.VSCodeのインストール
 
 ```bash
 $ sudo su
 ```
 
-��root�ɂ��Ă�����
+でrootにしておいて
 
 ```bash
 $ . <( wget -O - https://code.headmelted.com/installers/apt.sh )
 ```
 
-��OK
-���s����ꍇ��
+でOK
+実行する場合は
 
 ```bash
 $ code-oss
 ```
 
-# 3.���s���Ă���ʂ��^���Â̂܂܂̏ꍇ
+# 3.実行しても画面が真っ暗のままの場合
 
-�ŐV�o�[�W�����ł̃o�O���ۂ�
-�_�E���O���[�h����Ɖ�������
+最新バージョンでのバグっぽい
+ダウングレードすると解決する
 
 ```bash
 $ apt-get install code-oss=1.29.0-1539702286
 ```
 
-�����Ď����X�V���~�߂Ƃ�
+そして自動更新を止めとく
 
 ```bash
 $ apt-mark hold code-oss
 ```
 
-�����X�V���ĊJ����ɂ�
+自動更新を再開するには
 
 ```bash
 $ apt-mark unhold code-oss
